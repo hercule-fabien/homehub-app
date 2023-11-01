@@ -1,4 +1,6 @@
 import React, {useState} from 'react';
+import {toast} from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 import {Link, useNavigate} from "react-router-dom";
 import {getAuth, createUserWithEmailAndPassword, updateProfile} from 'firebase/auth';
 import {setDoc, doc, serverTimestamp} from 'firebase/firestore';
@@ -45,8 +47,9 @@ function SignUp(props) {
             await setDoc(doc(db, 'users', user.uid), formDataCopy);
 
             navigate('/');
+            toast.success('Success!');
         } catch (error) {
-            console.log(error)
+            toast.error('Something went wrong with the registration');
         }
     }
 

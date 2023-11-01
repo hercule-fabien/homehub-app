@@ -1,4 +1,5 @@
 import {BrowserRouter, Routes, Route} from "react-router-dom";
+import {ToastContainer} from 'react-toastify';
 import Navbar from "./components/Navbar";
 import Explore from "./pages/Explore";
 import ForgotPassword from "./pages/ForgotPassword";
@@ -21,6 +22,7 @@ function App() {
             </Routes>
             <Navbar />
         </BrowserRouter>
+        <ToastContainer />
     </>
   );
 }
